@@ -1,5 +1,7 @@
+import { DefaultTheme, ThemeProvider } from 'styled-components'
+import { useEffect, useState } from 'react';
+
 import type { AppProps } from 'next/app'
-import { ThemeProvider, DefaultTheme } from 'styled-components'
 import GlobalStyle from '../components/globalstyles'
 
 const theme: DefaultTheme = {
@@ -10,12 +12,26 @@ const theme: DefaultTheme = {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  )
+  const [showing, setShowing] = useState(false);
+
+  useEffect(() => {
+    setShowing(true);
+  }, []);
+
+  if (!showing) {
+    return null;
+  }
+
+  if (typeof window === 'undefined') {
+    return <></>;
+  } else {
+    return (
+      <>
+        <ThemeProvider theme={theme}>
+          <GlobalStyle />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </>
+    )
+  }
 }

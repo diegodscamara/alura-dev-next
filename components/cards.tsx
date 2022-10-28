@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import Link from 'next/link'
+import styled from 'styled-components'
 
 const FlexContainer = styled.div`
   display: flex;
@@ -32,7 +32,7 @@ const StyledA = styled.a`
   font-size: 1.5rem;
 `
 
-const StyledLink = ({ href, name }) => (
+const StyledLink = ({ href, name }: any) => (
   <Link href={href} passHref>
     <StyledA>{name}</StyledA>
   </Link>
