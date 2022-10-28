@@ -9,7 +9,7 @@ const Container = styled.div`
   height: 100vh;
   min-height: 100vh;
 `
-const Main = styled.main`
+const Main = styled.div`
   padding: 5rem 0;
   flex: 1;
   display: flex;
@@ -36,7 +36,7 @@ const Title = styled.h1`
   }
 `
 
-const Description = styled.p`
+const Description = styled.div`
   text-align: center;
   line-height: 1.5;
   font-size: 1.5rem;
