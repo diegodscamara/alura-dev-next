@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import type { AppProps } from 'next/app'
 import GlobalStyle from '../components/globalstyles'
+import Layout from '../components/layout';
 
 const theme: DefaultTheme = {
   colors: {
@@ -11,27 +12,21 @@ const theme: DefaultTheme = {
   },
 }
 
-export default function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps): JSX.Element | null {
   const [showing, setShowing] = useState(false);
 
   useEffect(() => {
     setShowing(true);
   }, []);
 
-  if (!showing) {
-    return null;
-  }
-
-  if (typeof window === 'undefined') {
-    return <></>;
-  } else {
-    return (
-      <>
-        <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </>
-    )
-  }
+  return !showing ? null : typeof window === 'undefined' ? <></> : <>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  </>;
 }
+
+export default App;
