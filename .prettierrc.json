@@ -1,0 +1,16 @@
+{
+  "endOfLine": "auto",
+  "arrowParens": "avoid",
+  "trailingComma": "none",
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 200,
+  "tabWidth": 2,
+  "extends": ["prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
+  }
+}

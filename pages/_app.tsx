@@ -1,32 +1,36 @@
 import { DefaultTheme, ThemeProvider } from 'styled-components'
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
 import type { AppProps } from 'next/app'
-import GlobalStyle from '../components/globalstyles'
-import Layout from '../components/layout';
+import GlobalStyle from '../components/styles/globalstyles'
+import Layout from '../components/layout/layout'
 
 const theme: DefaultTheme = {
   colors: {
     primary: '#111',
-    secondary: '#0070f3',
-  },
+    secondary: '#0070f3'
+  }
 }
 
 function App({ Component, pageProps }: AppProps): JSX.Element | null {
-  const [showing, setShowing] = useState(false);
+  const [showing, setShowing] = useState(false)
 
   useEffect(() => {
-    setShowing(true);
-  }, []);
+    setShowing(true)
+  }, [])
 
-  return !showing ? null : typeof window === 'undefined' ? <></> : <>
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ThemeProvider>
-  </>;
+  return !showing ? null : typeof window === 'undefined' ? (
+    <></>
+  ) : (
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
+    </>
+  )
 }
 
-export default App;
+export default App
