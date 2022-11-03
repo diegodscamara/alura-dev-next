@@ -19,10 +19,14 @@ const theme = {
       pink: '#FF6BCD',
       purple: '#6B83FF'
     }
-      
+  },
+  opacity: {
+    opacity100: 0.1,
+    opacity200: 0.2,
+    opacity600: 0.6
   },
   font: {
-    weigh: {
+    weight: {
       regular: 400,
       bold: 700
     },

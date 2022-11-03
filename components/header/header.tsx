@@ -1,29 +1,19 @@
+import Button from '../button'
 import Image from 'next/image'
 import Link from 'next/link'
 import Logo from 'public/icons/logo.svg'
-
-const path = [
-  { name: 'Editor de código', path: '/' },
-  { name: 'Comunidade', path: '/community' }
-]
+import Menu from 'public/icons/menu.svg'
+import { NavBar } from './styles'
 
 const Header = (): JSX.Element => {
   return (
     <header>
-      <nav>
+      <NavBar>
         <Link href={'/'}>
           <Image src={Logo} alt={'logo'} width={145} height={34} />
         </Link>
-        <ul>
-          {path.map(value => {
-            return (
-              <li key={value as unknown as null | undefined}>
-                <Link href={value.path}>{value.name}</Link>
-              </li>
-            )
-          })}
-        </ul>
-      </nav>
+        <Button variant={'icon'} icon={Menu} />
+      </NavBar>
     </header>
   )
 }

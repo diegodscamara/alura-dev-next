@@ -2,7 +2,7 @@ import { DefaultTheme, ThemeProvider } from 'styled-components'
 import { useEffect, useState } from 'react'
 
 import type { AppProps } from 'next/app'
-import GlobalStyle from '../components/styles/globalstyles'
+import GlobalStyle from '../styles/globalstyles'
 import Layout from '../components/layout/layout'
 
 const theme: DefaultTheme = {

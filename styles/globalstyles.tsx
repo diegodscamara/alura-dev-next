@@ -14,23 +14,28 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  h1 {
+  h2 {
     font-size: ${theme.font.size.large};
     line-height: ${theme.font.lineHeight.large};
-    font-weight: ${theme.font.weigh.bold};
+    font-weight: ${theme.font.weight.bold};
   }
 
   span {
     font-size: ${theme.font.size.medium};
     line-height: ${theme.font.lineHeight.medium};
-    font-weight: ${theme.font.weigh.regular};
+    font-weight: ${theme.font.weight.regular};
   }
 
   p, 
   a {
     font-size: ${theme.font.size.small};
     line-height: ${theme.font.lineHeight.small};
-    font-weight: ${theme.font.weigh.regular};
+    font-weight: ${theme.font.weight.regular};
+  }
+
+  p {
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
   }
 
   a {
