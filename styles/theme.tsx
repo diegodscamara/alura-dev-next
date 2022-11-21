@@ -23,7 +23,8 @@ const theme = {
   opacity: {
     opacity100: 0.1,
     opacity200: 0.2,
-    opacity600: 0.6
+    opacity400: 0.4,
+    opacity600: 0.64
   },
   font: {
     weight: {
@@ -31,6 +32,7 @@ const theme = {
       bold: 700
     },
     size: {
+      xsmall: '1.6rem',
       small: '1.8rem',
       medium: '2.4rem',
       large: '3.2rem'
@@ -39,6 +41,7 @@ const theme = {
       small: 1.2,
       medium: 1.6,
       large: 2.1,
+      xlarge: 2.4,
     }
   },
   spacing: {

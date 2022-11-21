@@ -97,6 +97,9 @@ const ButtonVariants = {
 export const ButtonStyle = styled.button<Props>`
   transition: ${theme.effect.transition.default};
   border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   &:disabled {
     opacity: 50%;
